@@ -1,0 +1,21 @@
+Description: Add Encoding.default_external to tilt_erbtemplate_test.rb
+ When locate is not set or LANG=C, tilt_erbtemplate_test.rb is failed
+ because ruby can't handling UTF-8 character.
+ .
+ This patch Add Encoding.default_external to success test.
+
+Author: Youhei SASAKI <uwabami@gfd-dennou.org>
+Bug-Debian: http://bugs.debian.org/628271
+Forwarded: https://github.com/rtomayko/tilt/pull/97
+Last-Update: 2013-07-22
+
+--- a/test/tilt_template_test.rb
++++ b/test/tilt_template_test.rb
+@@ -1,4 +1,7 @@
+ # coding: utf-8
++if RUBY_VERSION >= '1.9.1'
++    Encoding.default_external = "UTF-8"
++end
+ require 'test_helper'
+ require 'tilt'
+ require 'tilt/template'

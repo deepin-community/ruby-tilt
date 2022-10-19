@@ -1,0 +1,15 @@
+Description: Disable requirement of radius gem which is not yet packaged
+Author: Pirate Praveen <praveen@debian.org>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/Gemfile
++++ b/Gemfile
+@@ -41,7 +41,7 @@
+   gem 'creole'
+   gem 'kramdown'
+   gem 'rdoc'
+-  gem 'radius'
++  # gem 'radius'
+   gem 'asciidoctor', '>= 0.1.0'
+   gem 'liquid'
+   gem 'maruku'

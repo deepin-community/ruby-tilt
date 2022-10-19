@@ -1,0 +1,15 @@
+Description: Disable requirement of less gem which is not yet packaged
+Author: Pirate Praveen <praveen@debian.org>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/Gemfile
++++ b/Gemfile
+@@ -25,7 +25,7 @@
+   end
+ 
+   if can_execjs
+-    gem 'less'
++    # gem 'less'
+     gem 'coffee-script'
+     gem 'livescript'
+     gem 'babel-transpiler'

@@ -1,0 +1,16 @@
+Description: Set available locales for tests
+Author: Balasankar C <balasankarc@autistici.org>
+Last-Update: 2016-01-11
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/test/test_helper.rb
++++ b/test/test_helper.rb
+@@ -5,6 +5,8 @@
+ 
+ require 'minitest/autorun'
+ require 'minitest/mock'
++require 'i18n'
++I18n.available_locales = :en
+ 
+ # Contest adds +teardown+, +test+ and +context+ as class methods, and the
+ # instance methods +setup+ and +teardown+ now iterate on the corresponding

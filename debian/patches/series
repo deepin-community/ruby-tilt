@@ -1,0 +1,7 @@
+force_encoding_erb_test
+disable-less.patch
+disable-markaby.patch
+disable-radius.patch
+remove-bundler.patch
+set-available-locales.patch
+0007-Fix-Ruby-3.0-compatibility.patch

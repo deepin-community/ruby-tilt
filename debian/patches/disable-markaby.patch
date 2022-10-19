@@ -1,0 +1,16 @@
+Description: Disable requirement of markaby gem which is not yet packaged
+Author: Pirate Praveen <praveen@debian.org>
+Last-Update: 2018-12-15
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/Gemfile
++++ b/Gemfile
+@@ -16,7 +16,7 @@
+   gem 'builder'
+   gem 'haml', '>= 4' if RUBY_VERSION >= '2.0.0'
+   gem 'erubis'
+-  gem 'markaby'
++  # gem 'markaby'
+ 
+   if ENV['OLD_SASS']
+     gem 'sass'

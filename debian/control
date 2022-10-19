@@ -1,0 +1,36 @@
+Source: ruby-tilt
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Youhei SASAKI <uwabami@gfd-dennou.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               rake,
+               ruby-coffee-script,
+               ruby-contest,
+               ruby-creole,
+               ruby-erubis,
+               ruby-haml,
+               ruby-i18n,
+               ruby-nokogiri,
+               ruby-test-unit,
+               ruby-yajl
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-tilt.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-tilt
+Homepage: https://github.com/rtomayko/tilt/
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-tilt
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${ruby:Depends},
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Generic interface to multiple Ruby template engines
+ Tilt is a thin interface over a bunch of different Ruby template engines in an
+ attempt to make their usage as generic possible. This is useful for web
+ frameworks, static site generators, and other systems that support multiple
+ template engines but don't want to code for each of them individually.

@@ -1,0 +1,180 @@
+ruby-tilt (2.0.10-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Repository.
+  * Remove obsolete field Name from debian/upstream/metadata (already present in
+    machine-readable debian/copyright).
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Lucas Kanashiro ]
+  * Add patch to support ruby3.0 (Closes: #996515)
+  * Bump debhelper compatibility level to 13
+  * Declare compliance with Debian Policy 4.6.0
+  * Runtime depend on ${ruby:Depends}
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Thu, 04 Nov 2021 18:52:07 -0300
+
+ruby-tilt (2.0.10-1) unstable; urgency=medium
+
+  * Team upload.
+
+  * New upstream version 2.0.10
+  * d/watch: point to github as they removed tests from the gem
+  * debp14 states we should use debian/master for master branch
+  * d/control:
+    * adding an explicit Rules-Requires-Root field
+    * bump standards to 4.4.1
+    * bump debhelper-compat to 12
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+ -- Joseph Herlant <aerostitch@debian.org>  Sat, 14 Dec 2019 22:16:24 -0800
+
+ruby-tilt (2.0.9-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream version 2.0.9.
+  * Refresh patches for release 2.0.9.
+  * d/watch: update to use version 4 and gemwatch.d.n.
+  * d/control: bump standards to 4.2.1.
+  * d/control: switch to debhelper-compat package.
+  * Add a d/upstream/metadata file for dep-12.
+
+ -- Joseph Herlant <aerostitch@debian.org>  Sat, 15 Dec 2018 20:05:39 -0800
+
+ruby-tilt (2.0.8-1) unstable; urgency=low
+
+  * Team upload
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+  [ Joseph Herlant ]
+  * d/control: update Vcs-* to point to salsa directly
+  * d/control, d/compat: upgrade standards to 4.1.4 and compat to 11
+  * d/copyright: fix file-contains-trailing-whitespace
+  * d/control: fix homepage-field-uses-insecure-uri
+  * d/copyright: fix  insecure-copyright-format-uri
+  * d/watch: fix debian-watch-uses-insecure-uri
+  * d/p/force_encoding_erb_test: fix spelling-error-in-patch-description
+  * d/control: enable autopkgtest
+  * New upstream version 2.0.8
+  * Remove haml version patch that is no longer necessary
+  * Update existing patches to fit the new version
+  * d/copyright: update copyright years to reflect upstream change
+  * d/rules: add GEM2DEB_TEST_RUNNER = --check-dependencies
+
+ -- Joseph Herlant <herlantj@gmail.com>  Tue, 10 Apr 2018 18:22:35 -0700
+
+ruby-tilt (2.0.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Reupload to unstable (verified reverse dependencies are working)
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 13 Jan 2016 13:14:02 +0530
+
+ruby-tilt (2.0.1-1) experimental; urgency=medium
+
+  * Team upload
+
+  [ Lucas Nussbaum ]
+  * Drop myself from Uploaders
+
+  [ Pirate Praveen ]
+  * New upstream release (stage in experimental to sort reverse dependencies)
+  * Drop patch: new-test-unit-compatibility.patch (not needed for this version)
+  * Disable unpackaged dependencies
+  * Bump standards version to 3.9.6 (no changes)
+
+  [ Balasankar C ]
+  * Make tests run.
+    - disable-failing-test.patch: Disable the failing test.
+    - remove-bundler.patch: Remove usage of bundler during tests.
+    - set-available-locales.patch: Set available locales during tests.
+  * Bump debhelper compatibility.
+  * Add dep3 headers to all patches.
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 12 Jan 2016 15:41:34 +0530
+
+ruby-tilt (2.0.0+really1.4.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Revert to previous upstream release due to breakage of reverse
+    dependencies (Closes: #738488).
+  * switch build-dependency from ruby-minitest to ruby-test-unit
+    - had to add debian/patches/new-test-unit-compatibility.patch temporarily
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sun, 23 Feb 2014 12:33:57 -0300
+
+ruby-tilt (2.0.0-1) unstable; urgency=medium
+
+  * Imported Upstream version 2.0.0
+  * Refresh patches
+  * debian/control: Update Build-Depends
+  * Bump Standard Version: 3.9.5
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Fri, 31 Jan 2014 02:09:41 +0900
+
+ruby-tilt (1.4.1-1) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Team upload.
+  * New upstream release.
+  * Refresh Debian patches.
+  * Add git-buildpackage configuration
+  * Unapply patches after build.
+  * Remove cruft in debian/control.
+  * Bump Standards-Version to 3.9.4, no changes required.
+
+  [ Cédric Boutillier ]
+  * debian/control: remove obsolete DM-Upload-Allowed flag.
+  * Use canonical URI in Vcs-* fields.
+  * debian/copyright: use DEP5 copyright-format/1.0 official URL for Format
+    field.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 22 Jul 2013 23:11:28 +0200
+
+ruby-tilt (1.3.3-2) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+
+ -- Antonio Terceiro <terceiro@debian.org>  Mon, 25 Jun 2012 20:33:50 -0300
+
+ruby-tilt (1.3.3-1) unstable; urgency=low
+
+  [ Cédric Boutillier ]
+  * copyright: change to a working url in Format: field
+
+  [ Youhei SASAKI ]
+  * New Upstream Version: 1.3.3
+  * control: update Build-Depends:
+    libnokogiri-ruby{1.8,1.9.1}  to ruby-nokogiri
+  * copyright: change MIT to Expat
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Fri, 23 Sep 2011 01:49:29 +0900
+
+ruby-tilt (1.3.2-1) unstable; urgency=low
+
+  * Fix FTBFS: Closes: #628271
+    - add Encoding.default_external for Ruby >= 1.9.1
+  * New Upstream version: 1.3.2
+  * Bump Standard Version: 3.9.2
+  * Add manpage for /usr/bin/tilt
+  * Add me to Uploaders
+
+ -- Youhei SASAKI <uwabami@gfd-dennou.org>  Tue, 26 Jul 2011 04:10:13 +0900
+
+ruby-tilt (1.2.2-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Tue, 26 Apr 2011 15:42:58 +0200
