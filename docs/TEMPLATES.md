@@ -463,9 +463,7 @@ Markdown formatted texts are converted to HTML with one of these libraries:
   * Kramdown - `Tilt::KramdownTemplate`
   * Pandoc - `Tilt::PandocTemplate`
   * Maruku - `Tilt::MarukuTemplate`
-
-Tilt will use fallback mode (as documented in the README) for determining which
-library to use. RDiscount has highest priority - Maruku has lowest.
+  * CommonMarker - `Tilt::CommonMarkerTemplate`
 
 ### Example
 
@@ -508,7 +506,7 @@ Kramdown and Maruku don't support this option.
 
 ### See also
 
- * [Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax/)
+ * [Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)
 
 <a name='rdiscount'></a>
 RDiscount (`markdown`, `md`, `mkd`)

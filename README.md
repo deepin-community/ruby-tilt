@@ -32,8 +32,8 @@ Support for these template engines is included with the package:
 | Erubi                   | .erb, .rhtml, .erubi   | erubi                                      | Community   |
 | Erubis                  | .erb, .rhtml, .erubis  | erubis                                     | Tilt team   |
 | Haml                    | .haml                  | haml                                       | Tilt team   |
-| Sass                    | .sass                  | haml (< 3.1) or sass (>= 3.1)              | Tilt team   |
-| Scss                    | .scss                  | haml (< 3.1) or sass (>= 3.1)              | Tilt team   |
+| Sass                    | .sass                  | sass-embedded (>= 1.0) or sassc (>=2.0)    | Tilt team   |
+| Scss                    | .scss                  | sass-embedded (>= 1.0) or sassc (>=2.0)    | Tilt team   |
 | Less CSS                | .less                  | less                                       | Tilt team   |
 | Builder                 | .builder               | builder                                    | Tilt team   |
 | Liquid                  | .liquid                | liquid                                     | Community   |
@@ -87,6 +87,7 @@ These template engines ship with their own Tilt integration:
 | Embedded CoffeeScript |                  | sprockets           |
 | JST                   |                  | sprockets           |
 | Org-mode              | .org             | org-ruby (>= 0.6.2) |
+| Emacs Org             | .org             | tilt-emacs_org      |
 | Handlebars            | .hbs, handlebars | tilt-handlebars     |
 | Jbuilder              | .jbuilder        | tilt-jbuilder       |
 

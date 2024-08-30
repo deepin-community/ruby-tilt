@@ -1,0 +1,35 @@
+From b73279ee99b6817bcae51c166af4190ba65206bc Mon Sep 17 00:00:00 2001
+From: Jeremy Evans <code@jeremyevans.net>
+Date: Thu, 22 Sep 2022 18:28:51 -0700
+Subject: [PATCH] Make tests pass on Haml 6 without warnings
+
+Fixes #386
+---
+ lib/tilt/haml.rb               | 4 +++-
+ test/tilt_hamltemplate_test.rb | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+--- a/lib/tilt/haml.rb
++++ b/lib/tilt/haml.rb
+@@ -10,7 +10,9 @@ module Tilt
+     # `Gem::Version.correct?` may return false because of Haml::VERSION #=> "3.1.8 (Separated Sally)". After Haml 4, it's always correct.
+     if Gem::Version.correct?(Haml::VERSION) && Gem::Version.new(Haml::VERSION) >= Gem::Version.new('5.0.0.beta.2')
+       def prepare
+-        options = {}.update(@options).update(filename: eval_file, line: line)
++        options = Hash[@options]
++        options[:filename] = eval_file
++        options[:line] = line unless Haml::VERSION >= '6'
+         if options.include?(:outvar)
+           options[:buffer] = options.delete(:outvar)
+           options[:save_buffer] = true
+--- a/test/tilt_hamltemplate_test.rb
++++ b/test/tilt_hamltemplate_test.rb
+@@ -10,7 +10,7 @@ begin
+   class HamlTemplateTest < Minitest::Test
+     test "registered for '.haml' files" do
+       assert_equal Tilt::HamlTemplate, Tilt['test.haml']
+-    end
++    end unless Haml::VERSION >= '6'
+ 
+     test "preparing and evaluating templates on #render" do
+       template = Tilt::HamlTemplate.new { |t| "%p Hello World!" }
