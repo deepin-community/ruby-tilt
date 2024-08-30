@@ -4,7 +4,7 @@ require 'tilt/template'
 # Namespace for Tilt. This module is not intended to be included anywhere.
 module Tilt
   # Current version.
-  VERSION = '2.0.10'
+  VERSION = '2.0.11'
 
   @default_mapping = Mapping.new
 
@@ -161,6 +161,7 @@ module Tilt
   register_lazy 'Slim::Template',            'slim',            'slim'
   register_lazy 'Tilt::HandlebarsTemplate',  'tilt/handlebars', 'handlebars', 'hbs'
   register_lazy 'Tilt::OrgTemplate',         'org-ruby',        'org'
+  register_lazy 'Tilt::EmacsOrgTemplate',    'tilt/emacs_org',  'org'
   register_lazy 'Opal::Processor',           'opal',            'opal', 'rb'
   register_lazy 'Tilt::JbuilderTemplate',    'tilt/jbuilder',   'jbuilder'
 end

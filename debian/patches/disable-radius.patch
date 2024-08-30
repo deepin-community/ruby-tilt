@@ -4,7 +4,7 @@ Author: Pirate Praveen <praveen@debian.org>
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/Gemfile
 +++ b/Gemfile
-@@ -41,7 +41,7 @@
+@@ -40,7 +40,7 @@
    gem 'creole'
    gem 'kramdown'
    gem 'rdoc'

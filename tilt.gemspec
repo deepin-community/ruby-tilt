@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
 
   s.name = 'tilt'
-  s.version = '2.0.10'
-  s.date = '2019-09-23'
+  s.version = '2.0.11'
+  s.date = '2022-07-22'
 
   s.description = "Generic interface to multiple Ruby template engines"
   s.summary     = s.description
@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
 
   s.executables = ['tilt']
 
-  s.homepage = "http://github.com/rtomayko/tilt/"
+  s.homepage = "https://github.com/rtomayko/tilt/"
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Tilt", "--main", "Tilt"]
   s.require_paths = %w[lib]
   s.rubygems_version = '1.1.1'

@@ -1,3 +1,32 @@
+ruby-tilt (2.0.11-2) unstable; urgency=medium
+
+  * Add patch to remove warnings with ruby-haml >= 6 (Closes: #1026897)
+  * debian/ruby-tests.rake: skip coffestests even if installed
+  * debian/ruby-tests.rake: skip test/tilt_sasstemplate_test.rb
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 23 Dec 2022 14:56:42 -0300
+
+ruby-tilt (2.0.11-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/p/0007-Fix-Ruby-3.0-compatibility.patch: removed, applied by upstream.
+  * Refresh patches.
+  * d/control: add myself to the Uploaders list.
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Wed, 16 Nov 2022 16:19:52 -0300
+
+ruby-tilt (2.0.10-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Daniel Leidert ]
+  * Fix watch file.
+
+  [ Lucas Kanashiro ]
+  * d/control: do not depend on ruby-coffee-script (Closes: #1013504).
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Mon, 19 Sep 2022 17:39:57 -0300
+
 ruby-tilt (2.0.10-2) unstable; urgency=medium
 
   * Team upload.

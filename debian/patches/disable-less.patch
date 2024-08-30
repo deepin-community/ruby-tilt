@@ -1,15 +1,16 @@
 Description: Disable requirement of less gem which is not yet packaged
 Author: Pirate Praveen <praveen@debian.org>
+Last-Update: 2022-11-16
 ---
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/Gemfile
 +++ b/Gemfile
 @@ -25,7 +25,7 @@
+     gem 'sass-embedded'
    end
  
-   if can_execjs
--    gem 'less'
-+    # gem 'less'
-     gem 'coffee-script'
-     gem 'livescript'
-     gem 'babel-transpiler'
+-  gem 'less'
++  # gem 'less'
+   gem 'coffee-script'
+   gem 'livescript'
+   gem 'babel-transpiler'

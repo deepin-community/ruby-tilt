@@ -10,31 +10,30 @@ group :development do
   gem 'ronn', '~> 0.7.3'
 end
 
-can_execjs = (RUBY_VERSION >= '1.9.3')
-
 group :primary do
   gem 'builder'
-  gem 'haml', '>= 4' if RUBY_VERSION >= '2.0.0'
+  gem 'haml', '>= 4'
   gem 'erubis'
   gem 'markaby'
 
-  if ENV['OLD_SASS']
+  case ENV['SASS_IMPLEMENTATION']
+  when 'sass'
     gem 'sass'
-  else
+  when 'sassc'
     gem 'sassc'
+  else
+    gem 'sass-embedded'
   end
 
-  if can_execjs
-    gem 'less'
-    gem 'coffee-script'
-    gem 'livescript'
-    gem 'babel-transpiler'
-    gem 'typescript-node'
-  end
+  gem 'less'
+  gem 'coffee-script'
+  gem 'livescript'
+  gem 'babel-transpiler'
+  gem 'typescript-node'
 end
 
 platform :mri do
-  gem 'duktape', '~> 1.3.0.6' if can_execjs
+  gem 'duktape', '~> 1.3.0.6'
 end
 
 group :secondary do
@@ -52,19 +51,26 @@ group :secondary do
     gem 'pdf-reader', '~> 1.3.3'
   end
 
-  gem 'nokogiri' if RUBY_VERSION > '1.9.2'
+  gem 'nokogiri'
+
+  # Both rdiscount and bluecloth embeds Discount and loading
+  # both at the same time causes strange issues.
+  discount_gem = ENV["DISCOUNT_GEM"] || "rdiscount"
+  raise "DISCOUNT_GEM must be set to 'rdiscount' or 'bluecloth'" if !%w[rdiscount bluecloth].include?(discount_gem)
 
   platform :ruby do
     gem 'wikicloth'
+    gem 'rinku' # dependency for wikicloth for handling links
+
     gem 'yajl-ruby'
-    gem 'redcarpet' if RUBY_VERSION > '1.8.7'
-    gem 'rdiscount', '>= 2.1.6' if RUBY_VERSION != '1.9.2'
+    gem 'redcarpet'
+    gem 'rdiscount', '>= 2.1.6' if discount_gem == "rdiscount"
     gem 'RedCloth'
-    gem 'commonmarker' if RUBY_VERSION > '1.9.3'
+    gem 'commonmarker'
   end
 
   platform :mri do
-    gem 'bluecloth'
+    gem 'bluecloth' if discount_gem == "bluecloth"
   end
 end
 
